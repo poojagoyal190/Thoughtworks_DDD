@@ -10,14 +10,13 @@ public class DDDday1 {
 
         ArrayList<String> prodName = new ArrayList<>();
         ArrayList<Integer> prodQuantity = new ArrayList<>();
-
+        System.out.println("WELCOME !! to our shopping page ");
+        System.out.println("ID  Product  ");
+        System.out.println("1   IPaD Pro     ");
+        System.out.println("2   Hero Ink Pen ");
+        System.out.println("3   GM Cricket bat ");
+        System.out.println("4   Diary ");
         do{
-            System.out.println("WELCOME !! to our shopping page ");
-            System.out.println("ID  Product  ");
-            System.out.println("1   IPaD Pro     ");
-            System.out.println("2   Hero Ink Pen ");
-            System.out.println("3   GM Cricket bat ");
-            System.out.println("4   Diary ");
             System.out.print("Do you want to add or delete product in cart: add/ del ");
             String val = sc.nextLine();
 
@@ -46,17 +45,22 @@ public class DDDday1 {
              else if(val.equals("del")) {
                 System.out.println("Kindly enter the item ID you want to remove from cart");
                 int itemId = sc.nextInt();
+                String prod = prodName.get(itemId);
+                prodName.remove(itemId-1);
+                prodQuantity.remove(itemId-1);
+                System.out.println("Product removed: "+ prod);
 
-                prodName.remove(itemId);
-                prodQuantity.remove(itemId);
             }
             else
                 System.out.println("Invalid Option");
-                System.out.println("Product in your shopping cart: " + prodName + "\t Quantity:" +prodQuantity);
+
+            System.out.println("Product in your shopping cart: " + prodName + "\t Quantity:" +prodQuantity);
 
             System.out.println("If you want to continue shopping Press 1");
             input = sc.nextInt();
+            sc.nextLine();
 
         }while(input == 1);
+        System.out.println("Thanks for shopping");
     }
 }
